@@ -1,7 +1,13 @@
-fun main() {
-list2712()
 
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+
+fun main() {
+    myFirstCoroutine()
 }
+
+
 
 /**
  * kotlinではif/whileは文(statement)ではなく、式(expression)なので、
@@ -585,4 +591,13 @@ fun list284() {
     val lessThan = Num(5 ) < Num(1)
     println(greaterThan)
     println(lessThan)
+}
+
+
+fun myFirstCoroutine() = runBlocking {
+    launch {
+        delay(1000L)
+        println("world!")
+    }
+    println("Hello")
 }
